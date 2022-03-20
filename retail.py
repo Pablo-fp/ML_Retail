@@ -57,12 +57,6 @@ with model:
     y = data.drop(["Shop_name", "Total_area", "Secondary_area",
                    "Shop_window_area", "Total_cost"], axis=1)
 
-    # st.write(X.head())
-    # st.write(y.head())
-
-    # st.write(X.shape)
-    # st.write(y.shape)
-
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.3, random_state=4)
 
@@ -80,11 +74,14 @@ with header:
     st.image(image)
     st.markdown("""
     # Real Estate App for a Retail Business 
-    This simple webapp uses an invented retail dataset to build a machine learning model that predicts several of the features, including the distribution of areas inside the store and the cost of construction, presenting at the end an economical analysis of the future inversion. It´s a basic example of what could become a useful tool for expansion taking advantage of all the accumulated data within organisations.   
+    This simple webapp uses an invented retail dataset to build a machine learning model that predicts several of the features, including the distribution of areas inside the store and the cost of construction, presenting at the end an economical analysis of the future inversion. It´s a basic example of what could become a useful tool for expansion taking advantage of all the accumulated data within organizations.   
     (Cost and sales in $* an imaginary currency)
     """)
+
     with st.expander("See more of the dataset used"):
         # Load dataset´s head
+        video_url = "https://www.youtube.com/watch?v=b3ww7enzSZE&t=6s&ab_channel=PabloFernandezPerez"
+        st.video(video_url, format='video/mp4', start_time=0)
 
         st.markdown(""" 
             ## DATASET
@@ -103,7 +100,7 @@ with header:
         url = "https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.RegressorChain.html"
         st.markdown("""
         ## MODEL
-        The method used to create the dataset is a succesion of correlated linear regressions. I am using a **Multiouput Regressor Chain**, if you want to know more, check out this [link](%s).
+        The method used to create the dataset is a succesion of correlated linear regressions. I am using a **Multioutput Regressor Chain**, if you want to know more, check out this [link](%s).
         """ % url)
         st.write('**Model Evaluation Metrics of the chained Linear Regression**')
 
